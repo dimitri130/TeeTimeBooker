@@ -1,0 +1,6 @@
+undetected-chromedriver
+selenium
+cryptography
+pyautogui
+customtkinter
+pyinstaller

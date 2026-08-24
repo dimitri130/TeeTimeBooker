@@ -1,0 +1,60 @@
+{
+    "booking_url": "https://YOUR-COURSE.ezlinksgolf.com/index.html#/search",
+    "booking_date": "YYYY-MM-DD",
+    "username": "",
+    "password": "",
+    "num_players": 1,
+    "desired_time": "09:00",
+    "earliest_acceptable_time": "08:00",
+    "latest_acceptable_time": "10:00",
+    "preference_if_equal": "earlier",
+    "testing": true,
+    "additional_players": [],
+    "payment": {
+        "use_work_card": false,
+        "work_card_last4": "",
+        "default_card_last4": ""
+    },
+    "email_notifications": {
+        "enabled": false,
+        "to_emails": [],
+        "failure_contacts": [],
+        "heartbeat_contacts": [],
+        "local_popup": false
+    },
+    "auto_booking": {
+        "enabled": false,
+        "release_time": "06:00",
+        "prep_lead_minutes": 5,
+        "strike_max_minutes": 15,
+        "strike_poll_seconds": 2,
+        "widen_after_seconds": 90,
+        "check_interval_seconds": 15,
+        "max_attempts": 20,
+        "open_days_before": 14,
+        "probe_attempts": 2
+    },
+    "waiting_mode": {
+        "enabled": false,
+        "reconnect_min_minutes": 60,
+        "reconnect_max_minutes": 180,
+        "reconnect_jitter_seconds": 300,
+        "in_session_poll_seconds": 30,
+        "session_max_minutes": 0,
+        "auto_take": true,
+        "continuous_upgrade": true,
+        "cancel_existing_on_upgrade": false,
+        "fee_period_hours": 48,
+        "continue_into_fee_period": false,
+        "fee_period_auto_swap": false
+    },
+    "earlier_tolerance_minutes": 30,
+    "later_tolerance_minutes": 30,
+    "capture_page_dumps": false,
+    "reservations_cache_max_age_hours": 12,
+    "cloudflare_checkbox": {
+        "relative_x": 0.0,
+        "relative_y": 0.0,
+        "calibrated": false
+    }
+}
