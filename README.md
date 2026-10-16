@@ -105,7 +105,7 @@ skeleton; edit values then re-run to encrypt and validate.
 | `waiting_mode.auto_take` / `continuous_upgrade` / `cancel_existing_on_upgrade` | Take an opening automatically, keep upgrading toward `desired_time`, and cancel the prior booking on upgrade. |
 | `waiting_mode.fee_period_hours` / `continue_into_fee_period` / `fee_period_auto_swap` | Cancellation-fee window handling near the tee date. |
 | `cloudflare_checkbox` | Relative viewport coordinates of the Cloudflare checkbox. Must be calibrated per device (see Running). |
-| `email_notifications` | Optional notifications to playing partners (`enabled`, `to_emails`, `failure_contacts`, `heartbeat_contacts`, `local_popup`). Sent via Gmail SMTP from a hardcoded account (see `run_setup.py`). |
+| `email_notifications` | Optional notifications to playing partners (`enabled`, `to_emails`, `failure_contacts`, `heartbeat_contacts`, `local_popup`). Sent via Gmail SMTP from the account in the `TTB_SMTP_*` environment variables (see Optional: email notifications). |
 
 **Sensitive fields** (`username`, `password`) are encrypted
 with Fernet on first run and stored as `ENC:…` strings. The key lives in `.secret.key` —
@@ -182,10 +182,10 @@ CLI commands (all via `TimmysTeeTimeBooker.py`):
 
 ## Known gaps / future work
 
-- **Email notifications are optional.** Sent via Gmail SMTP from a hardcoded sender account
-  (`SENDER_EMAIL` / `SENDER_PASSWORD` in `run_setup.py`). `SENDER_PASSWORD` must be a Gmail
-  **App Password** (the plain account password is rejected by Gmail SMTP). Note these values
-  ship in the repo and exe, so treat the account as public. Recipients come from
+- **Email notifications are optional.** Sent via Gmail SMTP from the sender account given by
+  the `TTB_SMTP_SENDER` / `TTB_SMTP_APP_PASSWORD` environment variables (read in
+  `run_setup.py`). The password must be a Gmail **App Password** (the plain account password is
+  rejected by Gmail SMTP). Nothing is stored in the repo or the exe. Recipients come from
   `email_notifications.to_emails` (the per-player email fields in the GUI). An email is sent
   **only after a real booking is confirmed** — never in test mode — and includes the date,
   selected tee time, and players, with the confirmation page attached as a PDF.
